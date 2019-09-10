@@ -1,12 +1,15 @@
 import React  from 'react';
+import ButtonsElect from './ButtonElect';
 
 
 class ButtonsOptions extends React.Component{
 render(){
 return(
     <div>
-       <button>Desayuno </button>
-       <button>Almuerzo </button>
+       <button onClick={()=>this.props.option("Desayunos")} >Desayuno </button>
+       <button onClick={()=>this.props.option("Almuerzos")} >Almuerzo </button>
+       
+
 </div>
 )
 }
