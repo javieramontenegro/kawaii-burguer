@@ -1,5 +1,6 @@
 import React  from 'react';
-
+import { privateEncrypt } from 'crypto';
+import List from './List'
 
 class ButtonsElect extends React.Component{
   constructor(props){
@@ -14,11 +15,32 @@ class ButtonsElect extends React.Component{
      simple:false,
      doble:false,
      orderList:[],
-    }
     
     }
-  add(name,value){
+    /* this.add = this.add.bind(this) */
+    }
+  add=(name,value)=>{
+    let exist=false;
+    console.log("paso1")
     
+     /*   this.state.orderList.push(list) */
+    this.state.orderList.map(order=>{
+      
+    if(order.name=== name){
+       exist=true;
+       order.quantity++;
+     }
+    })
+    if(!exist){
+      let list = {name:name,value:value,quantity:1,total:value}
+      this.state.orderList.push(list)
+     
+   
+     }
+    
+    this.setState({orderList:this.state.orderList})
+  
+  
   }
 
   render(){
@@ -28,8 +50,9 @@ class ButtonsElect extends React.Component{
       <React.Fragment>
          {this.props.breakfast &&(
             this.props.optionFood.map(menu=>{
-                return(
-                  <button>{menu.name}</button>
+              console.log(menu) 
+              return(
+                  <button onClick={()=>this.add(menu.name,menu.value)}key={menu.name} >{menu.name}</button>
                 )
             })
          )}
@@ -46,7 +69,7 @@ class ButtonsElect extends React.Component{
                    this.state.acompañamientos && (
                       this.props.optionFood.Acompañamientos.map(menu=>{
                           return(
-                            <button>{menu.name}</button>
+                            <button onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
                               )
                              })
                         )
@@ -55,7 +78,7 @@ class ButtonsElect extends React.Component{
             this.state.agregados && (
               this.props.optionFood.Agregados.map(menu=>{
                 return(
-                  <button>{menu.name}</button>
+                  <button onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
                 )
               })
             )
@@ -70,7 +93,7 @@ class ButtonsElect extends React.Component{
                         this.state.agua && (
                           this.props.optionFood.Bebestibles.Agua.map(menu=>{
                             return(
-                              <button>{menu.name}</button>
+                              <button onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
                             )
                           })
                         )
@@ -79,7 +102,7 @@ class ButtonsElect extends React.Component{
                         this.state.gaseosa && (
                           this.props.optionFood.Bebestibles.Gaseosa.map(menu=>{
                             return(
-                              <button>{menu.name}</button>
+                              <button onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
                             )
                           })
                         )
@@ -97,7 +120,7 @@ class ButtonsElect extends React.Component{
                         this.state.simple && (
                           this.props.optionFood.Hamburguesas.Simple.map(menu=>{
                             return(
-                              <button>{menu.name}</button>
+                              <button onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
                             )
                           })
                         )
@@ -106,7 +129,7 @@ class ButtonsElect extends React.Component{
                       this.state.doble && (
                         this.props.optionFood.Hamburguesas.Doble.map(menu=>{
                           return(
-                            <button>{menu.name}</button>
+                            <button onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
                           )
                         })
                       )
@@ -121,7 +144,7 @@ class ButtonsElect extends React.Component{
               )
             }
          
-       
+             <List show={this.state.orderList}/>
 
 
           </React.Fragment>
