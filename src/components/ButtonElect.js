@@ -15,13 +15,14 @@ class ButtonsElect extends React.Component{
      simple:false,
      doble:false,
      orderList:[],
+     totalValue:0,
     
     }
     /* this.add = this.add.bind(this) */
     }
   add=(name,value)=>{
     let exist=false;
-    console.log("paso1")
+    
     
      /*   this.state.orderList.push(list) */
     this.state.orderList.map(order=>{
@@ -32,7 +33,7 @@ class ButtonsElect extends React.Component{
      }
     })
     if(!exist){
-      let list = {name:name,value:value,quantity:1,total:value}
+      let list = {name:name,value:value,quantity:1,total:value,}
       this.state.orderList.push(list)
      
    
@@ -42,7 +43,15 @@ class ButtonsElect extends React.Component{
   
   
   }
+  deleteOrder=(key)=>{
+    const removed= this.state.orderList.filter(deleteOrd=> deleteOrd.name !== key.name)
+    let sum = this.state.orderList.map(sum=>sum.total)
+    //chantar un if
+    this.setState({orderList:removed,
+                   /*  totalValue:this.state.totalValue - sum, */
+                          })
 
+   }
   render(){
     
     return(
@@ -144,7 +153,7 @@ class ButtonsElect extends React.Component{
               )
             }
          
-             <List show={this.state.orderList}/>
+             <List show={this.state.orderList} delete={this.deleteOrder} total={this.state.totalValue} />
 
 
           </React.Fragment>
