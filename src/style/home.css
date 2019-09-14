@@ -1,0 +1,16 @@
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    background-color: #fdc123;
+   /*  padding: 5rem;  */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left:0;
+    z-index: 99;
+    font-family: 'Lobster', cursive;
+    font-size: 1rem;
+  }
+  body{background-color: #059caf;}
