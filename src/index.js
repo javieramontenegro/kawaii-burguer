@@ -7,6 +7,7 @@ import OrderTheme from './pages/OrderTheme';
 import HomeTheme from './pages/HomeTheme'
 import * as firebase from 'firebase';
 import 'firebase/firestore';
+import App from './components/App';
 
 var firebaseConfig = {
     apiKey: "AIzaSyBIHVrjqYVYLsFJE0n_RoXgenC0frJLNhw",
@@ -19,7 +20,7 @@ var firebaseConfig = {
   };
   firebase.initializeApp(firebaseConfig);
 
-ReactDOM.render(<HomeTheme />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

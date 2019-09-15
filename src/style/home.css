@@ -13,4 +13,41 @@
     font-family: 'Lobster', cursive;
     font-size: 1rem;
   }
+ #logo{
+     margin-top: 7rem;
+ }
+ .text-prin{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display:flex;
+    margin-top: 2rem;
+ }
+ .text-prin h3{
+     margin-top: -1rem;
+ }
+ .order-space{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display:flex;
+ }
+ .order-space a{
+    text-decoration: none; 
+    color: black;
+ }
+ .btn-order{
+    background-color: #f07b1c;
+    text-align: center;
+    
+    margin-top:1rem;
+    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.5rem;
+    border-width: 0px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.3rem;
+    cursor: pointer;
+ }
   body{background-color: #059caf;}

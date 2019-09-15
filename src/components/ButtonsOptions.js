@@ -6,8 +6,8 @@ class ButtonsOptions extends React.Component{
 render(){
 return(
     <div>
-       <button onClick={()=>this.props.option("Desayunos")} >Desayuno </button>
-       <button onClick={()=>this.props.option("Almuerzos")} >Almuerzo </button>
+       <button className="btn-option" onClick={()=>this.props.option("Desayunos")} >Desayuno </button>
+       <button className="btn-option" onClick={()=>this.props.option("Almuerzos")} >Almuerzo </button>
        
 
 </div>

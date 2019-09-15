@@ -141,7 +141,7 @@ return total
             this.props.optionFood.map(menu=>{
               console.log(menu) 
               return(
-                  <button onClick={()=>this.add(menu.name,menu.value)}key={menu.name} >{menu.name}</button>
+                  <button className="btn-breakfast" onClick={()=>this.add(menu.name,menu.value)}key={menu.name} >{menu.name}</button>
                 )
             })
          )}
@@ -149,10 +149,10 @@ return total
          {this.props.lunch &&(
                     <React.Fragment>
                    
-                        <button onClick={()=>this.setState({acompañamientos:true,agregados:false,bebestibles:false,hamburguesas:false,})}>Acompañamiento</button>
-                        <button onClick={()=>this.setState({acompañamientos:false,agregados:true,bebestibles:false,hamburguesas:false,})}>Agregados</button>
-                        <button onClick={()=>this.setState({acompañamientos:false,agregados:false,bebestibles:true,hamburguesas:false,})}>Bebestible</button>
-                        <button onClick={()=>this.setState({acompañamientos:false,agregados:false,bebestibles:false,hamburguesas:true,})}>Hamburguesas</button>
+                        <button className="btn-breakfast"  onClick={()=>this.setState({acompañamientos:true,agregados:false,bebestibles:false,hamburguesas:false,})}>Acompañamiento</button>
+                        <button className="btn-breakfast" onClick={()=>this.setState({acompañamientos:false,agregados:true,bebestibles:false,hamburguesas:false,})}>Agregados</button>
+                        <button className="btn-breakfast" onClick={()=>this.setState({acompañamientos:false,agregados:false,bebestibles:true,hamburguesas:false,})}>Bebestible</button>
+                        <button className="btn-breakfast" onClick={()=>this.setState({acompañamientos:false,agregados:false,bebestibles:false,hamburguesas:true,})}>Hamburguesas</button>
                    <br></br>
                 {
                    this.state.acompañamientos && (
@@ -234,7 +234,7 @@ return total
             }
          
              <List show={this.state.orderList} delete={this.deleteOrder} total={this.state.totalValue} client={this.state.client} saveFirebase={this.saveFirebase} onChange={this.handleChange} totalSum={this.totalSum} sumQuantity={this.sumQuantity} minusQuantity={this.minusQuantity}   />
-              <Response  />
+             
 
           </React.Fragment>
 )

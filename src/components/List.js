@@ -1,5 +1,6 @@
 import React  from 'react';
 import * as firebase from 'firebase';
+import {Link} from 'react-router-dom'
 
 
 
@@ -43,6 +44,7 @@ return(
           <input type="text" onChange={this.props.onChange} name="client" placeholder="nombre cliente" ></input>
           <br></br>
           <button id="send-order" onClick={this.props.saveFirebase} >enviar pedido</button>
+          <Link to="/ready" className="btn-to-ready">Ver pedidos</Link>
          
     </div>
 )
