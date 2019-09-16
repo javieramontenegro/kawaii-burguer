@@ -37,17 +37,12 @@ class OrderTheme extends React.Component{
 return(
     <React.Fragment>
          <Nav/>
-             <div className="container" >
-                <div className="row justify-content-center">
-                    <div className="col-12 col-sm-3 col-md-6 col-lg-6 col-xl-6 option-buttons  ">
+            
                         <ButtonsOptions option={this.selectOption}/>
                         <ButtonsElect optionFood={this.state.order}  breakfast={this.state.breakfast} lunch={this.state.lunch}  />
                     
-                    </div>
-                    <div className="col-12 col-sm-3 col-md-6 col-lg-6 col-xl-6 option-buttons  ">
-                    </div>
-                </div>
-            </div>
+                   
+                   
     </React.Fragment>
 )
 }

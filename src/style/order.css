@@ -32,3 +32,123 @@
     font-size: 1rem;
     cursor: pointer;
 }
+.btn-ulti{
+    background-color: #fdc123;
+    padding-top:1rem;
+    padding-bottom:1rem;  
+    padding-left:1rem;
+    padding-right:1rem;
+    text-align: center;
+    margin: 0.5rem;
+    
+    border-radius: 0.5rem;
+    border-width: 0px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.contain-food{
+    background-color: #accb32;
+   
+    text-align: left;
+    margin: 0.5rem;
+    
+    border-radius: 0.5rem;
+    border-width: 0px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+}
+.btn-sum{
+    background-color: #fdc123;
+   
+    text-align: left;
+    
+    border: 6px solid #be9220; 
+    border-radius: 0.5rem;
+    border-width: 2px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.btn-minus{
+    background-color: #059caf;
+   
+    text-align: left;
+    
+    border: 6px solid #1d6fb3; 
+    border-radius: 0.5rem;
+    border-width: 2px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;  
+}
+.btn-delete{
+    background-color: #e22450;
+   
+    text-align: left;
+    
+    border: 6px solid #aa1a4a; 
+    border-radius: 0.5rem;
+    border-width: 2px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;  
+}
+.total{
+    background-color: #accb32;
+   
+    text-align: left;
+    
+    
+    border-radius: 0.5rem;
+    border-width: 0px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5rem;
+}
+.client{
+    background-color: white;
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 0px;
+    text-align: left;
+}
+.send-order{
+    background-color: #fdc123;
+    padding-top:0.2rem;
+    padding-bottom:0.2rem;  
+    padding-left:1rem;
+    padding-right:1rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+    border-width: 0px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.btn-to-ready{
+    background-color: #e22450;
+    padding-top:0.5rem;
+    margin-top:2rem;
+    padding-bottom:0.5rem;  
+    padding-left:1rem;
+    padding-right:1rem;
+    text-align: center;
+    
+   
+    border-radius: 0.5rem;
+    border-width: 0px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.anchor a{
+    text-decoration: none; 
+    color:black;
+    
+}

@@ -2,6 +2,7 @@ import React  from 'react';
 import Response from './Response'
 import List from './List'
 import * as firebase from 'firebase';
+import Swal from 'sweetalert2';
 
 class ButtonsElect extends React.Component{
   constructor(props){
@@ -78,7 +79,11 @@ class ButtonsElect extends React.Component{
     
     this.setState({totalValue:this.state.totalValue},()=>{console.log(this.state.totalValue)})
     if (this.state.client===""){
-        alert("ingresa un nombre")
+      Swal.fire({
+        type: 'warning',
+        title: 'Oops...',
+        text: 'Debes ingresa un nombre !',
+      })
     }
     else{
       this.setState({totalValue:this.state.totalValue},()=>{console.log(this.state.totalValue)})
@@ -97,7 +102,18 @@ class ButtonsElect extends React.Component{
           .catch(function(error) {
             console.error("Error adding document: ", error);
           });
-   
+          Swal.fire({
+            title: 'Orden guardada',
+            width: 600,
+            padding: '3em',
+            background: '#fff url(https://ih1.redbubble.net/image.501834807.7352/flat,1000x1000,075,f.u5.jpg) no-repeat center right',
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url("http://66.media.tumblr.com/8210fd413c5ce209678ef82d65731443/tumblr_mjphnqLpNy1s5jjtzo1_400.gif")
+              center left
+              no-repeat
+            `
+          })
     }
 
 }
@@ -135,8 +151,12 @@ return total
   render(){
     
     return(
-  
       <React.Fragment>
+      
+         <div className="container" >
+                <div className="row justify-content-center">
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+       
          {this.props.breakfast &&(
             this.props.optionFood.map(menu=>{
               console.log(menu) 
@@ -158,7 +178,7 @@ return total
                    this.state.acompañamientos && (
                       this.props.optionFood.Acompañamientos.map(menu=>{
                           return(
-                            <button onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
+                            <button className="btn-ulti" onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
                               )
                              })
                         )
@@ -167,7 +187,7 @@ return total
             this.state.agregados && (
               this.props.optionFood.Agregados.map(menu=>{
                 return(
-                  <button onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
+                  <button className="btn-ulti" onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
                 )
               })
             )
@@ -175,14 +195,14 @@ return total
            {
             this.state.bebestibles && (
               <React.Fragment>
-                  <button onClick={()=>this.setState({agua:true,gaseosa:false,})} >Agua</button>
-                  <button onClick={()=>this.setState({agua:false,gaseosa:true,})} >Gaseosa</button>
+                  <button className="btn-ulti" onClick={()=>this.setState({agua:true,gaseosa:false,})} >Agua</button>
+                  <button className="btn-ulti" onClick={()=>this.setState({agua:false,gaseosa:true,})} >Gaseosa</button>
                   <br></br>
                       {
                         this.state.agua && (
                           this.props.optionFood.Bebestibles.Agua.map(menu=>{
                             return(
-                              <button onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
+                              <button className="btn-breakfast" onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
                             )
                           })
                         )
@@ -191,7 +211,7 @@ return total
                         this.state.gaseosa && (
                           this.props.optionFood.Bebestibles.Gaseosa.map(menu=>{
                             return(
-                              <button onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
+                              <button className="btn-breakfast" onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
                             )
                           })
                         )
@@ -202,14 +222,14 @@ return total
                {
             this.state.hamburguesas && (
                  <React.Fragment>
-                  <button onClick={()=>this.setState({simple:true,doble:false,})} >Simple</button>
-                  <button onClick={()=>this.setState({simple:false,doble:true,})} >Doble</button>
+                  <button className="btn-ulti" onClick={()=>this.setState({simple:true,doble:false,})} >Simple</button>
+                  <button className="btn-ulti" onClick={()=>this.setState({simple:false,doble:true,})} >Doble</button>
                   <br></br>
                    {
                         this.state.simple && (
                           this.props.optionFood.Hamburguesas.Simple.map(menu=>{
                             return(
-                              <button onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
+                              <button className="btn-breakfast" onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
                             )
                           })
                         )
@@ -218,7 +238,7 @@ return total
                       this.state.doble && (
                         this.props.optionFood.Hamburguesas.Doble.map(menu=>{
                           return(
-                            <button onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
+                            <button className="btn-breakfast" onClick={()=>this.add(menu.name,menu.value)} >{menu.name}</button>
                           )
                         })
                       )
@@ -232,11 +252,16 @@ return total
                     
               )
             }
-         
-             <List show={this.state.orderList} delete={this.deleteOrder} total={this.state.totalValue} client={this.state.client} saveFirebase={this.saveFirebase} onChange={this.handleChange} totalSum={this.totalSum} sumQuantity={this.sumQuantity} minusQuantity={this.minusQuantity}   />
-             
-
-          </React.Fragment>
+               </div>
+                   
+               
+               
+                         <div className="col-md-6 xl-3 ml-auto">
+                                <List show={this.state.orderList} delete={this.deleteOrder} total={this.state.totalValue} client={this.state.client} saveFirebase={this.saveFirebase} onChange={this.handleChange} totalSum={this.totalSum} sumQuantity={this.sumQuantity} minusQuantity={this.minusQuantity}   />
+                         </div>
+                   </div>
+              </div>
+             </React.Fragment>                     
 )
 }
 }
