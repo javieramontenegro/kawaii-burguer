@@ -9,7 +9,7 @@ return(
                   
               
                
-                  <h1>Burguer Queen</h1>
+                  <h1>Burger Queen</h1>
                 
 
     </div>
