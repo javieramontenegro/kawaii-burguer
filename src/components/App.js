@@ -1,18 +1,20 @@
 import React from 'react'
-import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomeTheme from '../pages/HomeTheme'
 import OrderTheme from '../pages/OrderTheme'
 import ReadyTheme from '../pages/ReadyTheme'
-function App(){
-    return(
+
+function App() {
+    return (
         <BrowserRouter>
-               <Switch>
-               <Route exact path="/" component={HomeTheme} ></Route>
-                <Route exact path="/home" component={HomeTheme} ></Route>
-                <Route exact path="/order" component={OrderTheme} ></Route>
-                <Route exact path="/ready" component={ReadyTheme} ></Route>
-               </Switch>
+            <Routes>
+                <Route exact path="/" element={<HomeTheme />} />
+                <Route exact path="/home" element={<HomeTheme />} />
+                <Route exact path="/order" element={<OrderTheme />} />
+                <Route exact path="/ready" element={<ReadyTheme />} />
+            </Routes>
         </BrowserRouter>
     )
 }
+
 export default App;

@@ -1,15 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-/* import './index.css'; */
-/* import App from './App'; */
+import ReactDOM from 'react-dom/client'; // Importa desde react-dom/client
 import * as serviceWorker from './serviceWorker';
-import OrderTheme from './pages/OrderTheme';
-import HomeTheme from './pages/HomeTheme'
-import * as firebase from 'firebase';
-import 'firebase/firestore';
 import App from './components/App';
 
-var firebaseConfig = {
+// Importar Firebase 9+ de forma modular
+import { initializeApp, getApp, getApps } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+
+// Configuración de Firebase
+export const firebaseConfig = {
     apiKey: "AIzaSyBIHVrjqYVYLsFJE0n_RoXgenC0frJLNhw",
     authDomain: "kawaii-burguer.firebaseapp.com",
     databaseURL: "https://kawaii-burguer.firebaseio.com",
@@ -17,12 +16,22 @@ var firebaseConfig = {
     storageBucket: "kawaii-burguer.appspot.com",
     messagingSenderId: "919586581235",
     appId: "1:919586581235:web:0a6f981dcbad70eb08e586"
-  };
-  firebase.initializeApp(firebaseConfig);
+};
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// Inicializar Firebase
+const app = initializeApp(firebaseConfig);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+// Obtener Firestore
+const db = getFirestore(app);
+
+// Exportar para usar en otros archivos
+export { app, db };
+
+// Usar el nuevo método de React 18 para renderizar la aplicación
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+
+// Si deseas que tu aplicación funcione offline y se cargue más rápido,
+// puedes cambiar unregister() a register() a continuación. Ten en cuenta que esto viene con algunas complicaciones.
+// Más información sobre los service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
