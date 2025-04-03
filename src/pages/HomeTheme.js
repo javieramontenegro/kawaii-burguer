@@ -27,7 +27,7 @@ return(
                 </div>
               <div className="row justify-content-center">
                  <div className="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 text-prin"> 
-                      <h1>Bienvenido a Burguer Queen</h1>
+                      <h1>Bienvenido a Burger Queen</h1>
                  </div>
               </div>
               <div className="row justify-content-center">
