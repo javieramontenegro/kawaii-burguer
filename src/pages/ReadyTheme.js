@@ -1,7 +1,7 @@
 import React  from 'react';
 import Nav from '../components/Nav'
 import Response from '../components/Response'
-import {Link} from 'react-router-dom'
+
 import '../style/ready.css'
 
 class ReadyTheme extends React.Component{

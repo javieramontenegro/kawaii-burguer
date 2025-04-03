@@ -1,5 +1,5 @@
 import React  from 'react';
-import ButtonsElect from './ButtonElect';
+
 
 
 class ButtonsOptions extends React.Component{

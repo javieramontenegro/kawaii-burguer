@@ -1,5 +1,5 @@
 import React from 'react';
-import { getFirestore, collection, addDoc } from 'firebase/firestore'; // Importaciones de Firebase 9+
+import {  collection, addDoc } from 'firebase/firestore'; // Importaciones de Firebase 9+
 import { initializeApp } from 'firebase/app'; // Asegúrate de importar initializeApp
 import { firebaseConfig, db } from '../index'; // Ajusta la ruta si es necesario
 import Swal from 'sweetalert2';

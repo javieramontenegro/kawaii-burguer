@@ -4,7 +4,7 @@ import * as serviceWorker from './serviceWorker';
 import App from './components/App';
 
 // Importar Firebase 9+ de forma modular
-import { initializeApp, getApp, getApps } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 // Configuración de Firebase

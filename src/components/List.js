@@ -1,9 +1,8 @@
 // List.js
 import React from 'react';
-import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+
 import { Link } from 'react-router-dom';
-import { firebaseConfig, db } from '../index'; // Ajusta la ruta si es necesario
+
 
 
 

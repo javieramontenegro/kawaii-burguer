@@ -1,5 +1,5 @@
 import React from 'react';
-import { getFirestore, collection, query, where, orderBy, onSnapshot } from 'firebase/firestore'; 
+import { collection, query, where, orderBy, onSnapshot } from 'firebase/firestore'; 
 import { initializeApp } from 'firebase/app'; // Asegúrate de importar initializeApp
 import { firebaseConfig, db } from '../index'; // Ajusta la ruta si es necesario
 import Res from './Res';
